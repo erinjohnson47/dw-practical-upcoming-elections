@@ -1,14 +1,5 @@
 # Democracy Works Upcoming Elections Practical Exercise
 
-Thank you for applying to work at Democracy Works! This coding
-exercise is designed to show off your ability to program a small
-application that interacts with an API. You should spend no more than
-2 hours on it and then turn it in to us.
-
-If you've previously applied to Democracy Works with this project,
-we ask that you either 1) submit the work you completed previously, or 2)
-start your work from scratch so that we can fairly judge your work 
-against that of other applicants.
 
 ## The project
 
