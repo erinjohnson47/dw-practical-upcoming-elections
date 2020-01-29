@@ -1,6 +1,6 @@
 <div class="address-form">
   <h1>{{title}}</h1>
-  <form action="/search" method="post">
+  <form action="/" method="post" enctype='application/x-www-form-urlencoded' role='form'>
     <p>Enter the address where you are registered to vote</p>
     <div>
       <label for="street-field">Street:</label>
@@ -8,7 +8,7 @@
     </div>
     <div>
       <label for="street-2-field">Street 2:</label>
-      <input id="street-2-field" name="street-2" type="text">
+      <input id="street-2-field" name="street2" type="text">
     </div>
     <div>
       <label for="city-field">City:</label>
@@ -25,7 +25,7 @@
       <input id="zip-field" name="zip" size="10" type="text">
     </div>
     <div class="button">
-      <button type="submit">Search</button>
+      <button type="submit" name='submit'>Search</button>
     </div>
   </form>
 </div>
