@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const usStates = require('../us_state.js');
-// const apiData = require('../search.js')
+const apiData = require('../search.js')
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -15,24 +15,19 @@ router.get('/', (req, res, next) => {
   }
 });
 
-router.post('/', (req, res, next) => {
+router.post('/', async (req, res, next) => {
   try {
     const data = req.body;
-    const dataObject = {
-      street: data.street,
-      street2: data.street2,
-      city: data.city,
-      state: data.state,
-      zip: data.zip
-    }
-    console.log(dataObject, 'ths is req.body')    
+    const apiCall = await apiData();
+    console.log(apiCall,'this is apiCall data?')
     res.render('search', {
       title: 'Local Election Search Results',
-      dataObject
+      data
     });
   } catch (error) {
     console.error(error)
   }
 })
+
 
 module.exports = router;
