@@ -1,15 +1,12 @@
 <section>
     <h1>{{title}}</h1>
     <h3>You Searched:</h3>
-    <p>Street: {{data.street}}</p>
-    <p>Street 2: {{data.street2}}</p>
-    <p>City: {{data.city}}</p>
-    <p>CA: {{data.state}}</p>
-    <p>Zip: {{data.zip}}</p>
+    <p>{{data.street}}, {{data.street2}}, {{data.city}}, {{data.state}} {{data.zip}}</p>
   
   <h1>Election Search Results</h1>
-    <br>
-    <p>{{apiData}}</p>
-    <br>
+    <p>Election: {{electionDescription}}</p>
+    <p>Date: {{electionDate}}</p>
+    <p>URL: <a href="{electionURL}">{{electionURL}}</a></p>
+
 Click <a href="/">here</a> to Search again.
 </section>
