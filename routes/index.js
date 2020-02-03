@@ -18,11 +18,11 @@ router.get('/', (req, res, next) => {
 router.post('/', async (req, res, next) => {
   try {
     const data = req.body;
-    const apiCall = await apiData();
-    console.log(apiCall,'this is apiCall data?')
+    const apiCall = await apiData(data);
     res.render('search', {
       title: 'Local Election Search Results',
-      data
+      data,
+      apiCall
     });
   } catch (error) {
     console.error(error)
