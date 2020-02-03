@@ -18,11 +18,11 @@ router.get('/', (req, res, next) => {
 router.post('/', async (req, res, next) => {
   try {
     const data = req.body;
-    const responseData = await apiData(data);
+    const electionDataResponse = await apiData(data);
     res.render('search', {
       title: 'Local Election Search Results',
       data,
-      responseData
+      electionDataResponse
     });
     
   } catch (error) {
