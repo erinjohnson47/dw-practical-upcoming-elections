@@ -4,9 +4,9 @@
     <p>{{data.street}}, {{data.street2}}, {{data.city}}, {{data.state}} {{data.zip}}</p>
   
   <h1>Election Search Results</h1>
-    <p>Election: {{electionDescription}}</p>
-    <p>Date: {{electionDate}}</p>
-    <p>URL: <a href="{electionURL}">{{electionURL}}</a></p>
+    <p>Election: {{responseData.description}}</p>
+    <p>Date: {{responseData.date}}</p>
+    <p>URL: <a href="{responseData[0].website}">{{responseData.website}}</a></p>
 
 Click <a href="/">here</a> to Search again.
 </section>

@@ -21,10 +21,8 @@ router.post('/', async (req, res, next) => {
     const responseData = await apiData(data);
     res.render('search', {
       title: 'Local Election Search Results',
-      data: data,
-      electionDescription: responseData[0][':description'],
-      electionDate: responseData[0][':date'],
-      electionURL: responseData[0][':website']
+      data,
+      responseData
     });
     
   } catch (error) {
