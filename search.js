@@ -13,16 +13,17 @@ module.exports = async (inputData) => {
                 Accept: 'application/json'
             }
         })
-        console.log(response.data.length,'this is response object.length')
+        //if no data, set message to no elections, send message back to index.js
         if (!response.data.length) {
             const noDataMsg = "We did not find any elections coming up in your area, please check back frequently.";
             return noDataMsg;            
         } else {
+            //if data, populate object fields for search view, send object back to index.js
             const electionData = {
                 description: response.data[0].description,
-                type: response.data[0].type,
+                type: response.data[0].type.split('-').join(' '),
                 website: response.data[0].website,
-                date: new Date(response.data[0].date).toUTCString(),
+                date: `${new Date(response.data[0].date).getMonth()+1}/${new Date(response.data[0].date).getUTCDate()}/${new Date(response.data[0].date).getFullYear()}`,
                 pollingPlace: response.data[0]['polling-place-url']
             }
             return electionData;

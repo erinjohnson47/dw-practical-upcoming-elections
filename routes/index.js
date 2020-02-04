@@ -15,9 +15,12 @@ router.get('/', (req, res, next) => {
   }
 });
 
+//POST request uses form data to make API call, posts data from API back to search view page
 router.post('/', async (req, res, next) => {
   try {
+    //data from form
     const data = req.body;
+    //make API call by passing data form form into search.js
     const electionDataResponse = await apiData(data);
     res.render('search', {
       title: 'Local Election Search Results',
@@ -29,6 +32,5 @@ router.post('/', async (req, res, next) => {
     console.error(error)
   }
 })
-
 
 module.exports = router;
